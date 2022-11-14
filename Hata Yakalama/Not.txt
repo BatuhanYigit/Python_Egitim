@@ -1,0 +1,4 @@
+try:
+    hata verebileceğini bildiğimiz kodlar
+except HataAdı:
+    hata durumunda yapılacak işlem
