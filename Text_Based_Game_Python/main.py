@@ -1,5 +1,6 @@
 import oyun
 import ayarlar
+
 def secima():
     try:
         ayarlar.slowPrint("Oyuna Devam Etmek İstiyor musun {}  (evet/hayır): ".format(name))
