@@ -5,7 +5,7 @@ def secima():
         ayarlar.slowPrint("Oyuna Devam Etmek İstiyor musun {}  (evet/hayır): ".format(name))
         secim = input()
         if(secim == "evet"):
-            ayarlar.slowPrint("Hadi Başlayalım....")
+            ayarlar.slowPrint("Hadi Başlayalım....\n")
 
             oyun.story()
 

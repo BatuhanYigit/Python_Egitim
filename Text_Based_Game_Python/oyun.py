@@ -1,18 +1,25 @@
 import ayarlar
-can = 100
+saglik = 100
 
 def story():
-    yol = input("Önünde iki yol var sağdan mı gitmek istersin soldan mı ? (sağ/sol) : ")
+    global saglik
+    ayarlar.slowPrint("Önünde iki yol var sağdan mı gitmek istersin soldan mı ? (sağ/sol) : ")
+    yol = input()
     if(yol == "sağ"):
         ayarlar.slowPrint("Sağdan Gittin ve kafana taş düştü maalesef öldün")
     elif(yol == "sol"):
-        ayarlar.slowPrint("Soldan gittin")
-        sol_dan = input("Karşında kurt var ne yapacaksın ? (Kaç/Dur) : ")
+        ayarlar.slowPrint("Soldan gittin\n")
+        ayarlar.slowPrint("Karşında kurt var ne yapacaksın ? (Kaç/Dur) : ")
+        sol_dan = input()
         if(sol_dan == "kaç"):
-            story_aralik = input("Kaçtın Ve Bir Aralık Gördün Ne Yapacaksın ? (Gir/Girme)")
+            ayarlar.slowPrint("Kaçtın Ve Bir Aralık Gördün Ne Yapacaksın ? (Gir/Girme) : ")
+            story_aralik = input()
+            
             if(story_aralik == ("gir")):
-                can - 10
-                ayarlar.slowPrint("İçeri Girdin Fakat ayağını kırdın {}".format(can))
+                saglik = saglik - 10
+                ayarlar.slowPrint("İçeri Girdin Fakat ayağını kırdın {}".format(saglik))
+                
+                
             elif(story_aralik == ("girme")):
                 ayarlar.slowPrint("Yoluna Devam ediyorsun")
                 story2()
