@@ -1,5 +1,26 @@
 import oyun
 import ayarlar
+def secima():
+    try:
+        ayarlar.slowPrint("Oyuna Devam Etmek İstiyor musun {}  (evet/hayır): ".format(name))
+        secim = input()
+        if(secim == "evet"):
+            ayarlar.slowPrint("Hadi Başlayalım....")
+
+            oyun.story()
+
+        elif(secim == "hayır"):
+            ayarlar.slowPrint("Bir dahakine görüşmek üzere :(")
+
+        else:
+            secim()
+            ayarlar.slowPrint("Lütfen evet veya hayır seçeneğini seçiniz....")
+    except TypeError:
+
+        secima()
+
+
+
 print("""
 
    _____                         ____            
@@ -15,28 +36,14 @@ print("""
 
 """)
 
-ayarlar.slowPrint("Hoşgeldiniz........")
+ayarlar.slowPrint("Hoşgeldiniz........\n")
 
-name = input("İsminiz Nedir ? : ")
+ayarlar.slowPrint("İsminiz Nedir ? : ")
+name = input()
 
-print("Hoş geldin",name)
+ayarlar.slowPrint("Hoş geldin ".format(name))
+secima()
 
-
-
-
-def secima():
-    secim = input("Oyuna Devam Etmek İstiyor musun {}  (evet/hayır): ".format(name))
-    if(secim == "evet"):
-        print("Hadi Başlayalım....")
-
-        oyun.story()
-
-    elif(secim == "hayır"):
-        print("Bir dahakine görüşmek üzere :(")
-
-    else:
-        secim()
-        print("Lütfen evet veya hayır seçeneğini seçiniz....")
 
 
 
