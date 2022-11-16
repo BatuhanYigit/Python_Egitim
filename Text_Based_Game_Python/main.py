@@ -1,5 +1,5 @@
 import oyun
-
+import ayarlar
 print("""
 
    _____                         ____            
@@ -15,22 +15,28 @@ print("""
 
 """)
 
-print("Hoşgeldiniz........")
+ayarlar.slowPrint("Hoşgeldiniz........")
 
 name = input("İsminiz Nedir ? : ")
 
 print("Hoş geldin",name)
 
 
-secim = input("Oyuna Devam Etmek İstiyor musun {}  (yes/no): ".format(name))
 
-if(secim == "yes"):
-    print("Hadi Başlayalım....")
 
-    oyun.veyso()
+def secima():
+    secim = input("Oyuna Devam Etmek İstiyor musun {}  (evet/hayır): ".format(name))
+    if(secim == "evet"):
+        print("Hadi Başlayalım....")
 
-elif(secim == "no"):
-    print("Bir dahakine görüşmek üzere :(")
+        oyun.story()
 
-else:
-    print("Lütfen yes veya no seçeneğini seçiniz....")
+    elif(secim == "hayır"):
+        print("Bir dahakine görüşmek üzere :(")
+
+    else:
+        secim()
+        print("Lütfen evet veya hayır seçeneğini seçiniz....")
+
+
+
