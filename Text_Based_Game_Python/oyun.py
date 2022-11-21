@@ -1,18 +1,30 @@
 import ayarlar
 saglik = 100
 para = 0
+envanter = []
+def envanter_kontrol():
+    ayarlar.slowPrint("""
+    *************************************************
+                        Envanter
+                        {}
+    *************************************************
+    
+    
+    \n""".format(envanter))
+
 def saglik_kontrol():
     if(saglik == 0):
-        print("\nÖldünüz Lütfen Yeniden Başlayınız {}".format(saglik))
+        ayarlar.slowPrint("\nÖldünüz Lütfen Yeniden Başlayınız {}".format(saglik))
     elif(saglik < 50):
-        print("\nCanınız Azalıyor...{}".format(saglik))
+        ayarlar.slowPrint("\nCanınız Azalıyor...{}".format(saglik))
     else:
-        print("\nCan durumunuz : {}".format(saglik))
+        ayarlar.slowPrint("\nCan durumunuz : {}".format(saglik))
 def para_kontrol():
     print("Banka Durumu {}".format(para))
 
 def story():
     global saglik
+    global para
     ayarlar.slowPrint("Önünde iki yol var sağdan mı gitmek istersin soldan mı ? (sağ/sol) : ")
     yol = input()
     if(yol == "sağ"):
@@ -41,6 +53,7 @@ def story():
 def story2():
     global para
     global saglik
+    global envanter
     ayarlar.slowPrint("""
     *************************************************
                     İkinci Bölüm
@@ -50,14 +63,51 @@ def story2():
     \n""")
     ayarlar.slowPrint("\nÖnüne bir yabancı çıktı seninle tanışmak istiyor (tanış \ tanışma) : ")
     story2_tanisma = input()
-    if(story2_tanisma == "tanış"):
-        print("Yabancı Sana Para Verdi")
-        para = para + 100
-        para_kontrol()
-    elif(story2_tanisma == "tanışma"):
-        ayarlar.slowPrint("Yabancı Yüzüne bakmadığın için sinirlendi kafana tahta fırlattı : ")
-        saglik = saglik - 10
-        saglik_kontrol()
+    while True:
+        if(story2_tanisma == "tanış"):
+            print("Yabancı Sana Para Verdi")
+            para = para + 100
+            para_kontrol()
+            ayarlar.slowPrint("\n Bir Çiftlik gördün ve elma aldın. ")
+            envanter.append("Elma")
+            envanter_kontrol()
+            ayarlar.slowPrint("\n Kırık Bir Araba Buldun Tamir Etmek İster Misin ? (Evet/Hayır) : ")
+            story2_araba = input()
+            if(story2_araba == "evet"):
+                ayarlar.slowPrint("Arabayı Tamir Ettin Fakat Kolunu Yaraldın...")
+                saglik = saglik - 10
+                saglik_kontrol()
+                break
+            elif(story2_araba == "hayır"):
+                ayarlar.slowPrint("Yerde sağlık kiti buldun...")
+                envanter.append("Sağlık Çantası")
+                envanter_kontrol()
+                ayarlar.slowPrint("Sağlık Çantasını Kullanmak İstiyor Musun? (Evet/Hayır) : ")
+                story2_saglikcantasi = input()
+                if(story2_saglikcantasi == "evet"):
+                    ayarlar.slowPrint("Sağlık Çantasını Kullandın")
+                    envanter.remove("Sağlık Çantası")
+                    envanter_kontrol()
+                    saglik = saglik + 10
+                    saglik_kontrol()
+                    break
+                elif(story2_saglikcantasi == "hayır"):
+                    ayarlar.slowPrint("Sağlık Çantasını Kullanmadın")
+                    envanter_kontrol()
+                    saglik_kontrol()
+                    break
+
+            
+            
+
+
+        elif(story2_tanisma == "tanışma"):
+            ayarlar.slowPrint("Yabancı Yüzüne bakmadığın için sinirlendi kafana tahta fırlattı : ")
+            saglik = saglik - 10
+            saglik_kontrol()
+        else:
+            ayarlar.slowPrint("Lütfen Evet Veya Hayır Giriniz....")
+    
     
 
             

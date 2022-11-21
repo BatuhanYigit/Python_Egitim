@@ -14,7 +14,7 @@ def secima():
             ayarlar.slowPrint("Bir dahakine görüşmek üzere :(")
 
         else:
-            secim()
+            secima()
             ayarlar.slowPrint("Lütfen evet veya hayır seçeneğini seçiniz....")
     except TypeError:
 
@@ -44,7 +44,3 @@ name = input()
 
 ayarlar.slowPrint("Hoş geldin ".format(name))
 secima()
-
-
-
-
