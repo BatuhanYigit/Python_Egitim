@@ -77,7 +77,7 @@ def story2():
                 ayarlar.slowPrint("Arabayı Tamir Ettin Fakat Kolunu Yaraldın...")
                 saglik = saglik - 10
                 saglik_kontrol()
-                break
+                story3()
             elif(story2_araba == "hayır"):
                 ayarlar.slowPrint("Yerde sağlık kiti buldun...")
                 envanter.append("Sağlık Çantası")
@@ -90,12 +90,12 @@ def story2():
                     envanter_kontrol()
                     saglik = saglik + 10
                     saglik_kontrol()
-                    break
+                    story3()
                 elif(story2_saglikcantasi == "hayır"):
                     ayarlar.slowPrint("Sağlık Çantasını Kullanmadın")
                     envanter_kontrol()
                     saglik_kontrol()
-                    break
+                    story3()
 
             
             
@@ -105,8 +105,21 @@ def story2():
             ayarlar.slowPrint("Yabancı Yüzüne bakmadığın için sinirlendi kafana tahta fırlattı : ")
             saglik = saglik - 10
             saglik_kontrol()
+            story3()
+
         else:
             ayarlar.slowPrint("Lütfen Evet Veya Hayır Giriniz....")
+
+def story3():
+    ayarlar.slowPrint("""\n
+    *************************************************
+                    Üçüncü Bölüm
+    *************************************************
+    
+    \n""")
+    envanter_kontrol()
+    para_kontrol()
+
     
     
 
