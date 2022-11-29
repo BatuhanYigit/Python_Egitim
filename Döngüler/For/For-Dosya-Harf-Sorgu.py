@@ -7,3 +7,5 @@ for karakter_dizisi in d1:
             sayi+=1
 print(sayi)
 d1.close
+
+#deneme
