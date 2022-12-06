@@ -120,6 +120,9 @@ def story3():
     envanter_kontrol()
     para_kontrol()
 
+    ayarlar.slowPrint("Koşarak uzaklaşıyorsun ve ayağın kanamaya başladı")
+    
+
     
     
 
