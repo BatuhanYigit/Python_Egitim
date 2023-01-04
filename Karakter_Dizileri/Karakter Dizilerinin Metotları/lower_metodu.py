@@ -2,7 +2,7 @@
 
 kisi = input("Aradığınız kişinin ismini giriniz : ")
 
-kisi = kisi.replace("I","ı").replace("İ","i").lower()
+kisi = kisi.replace("I","ı").replace("İ","i").lower() # türkçe karakterleri düzgün bir şekilde küçültemediği için bu komutu kullandık
 
 if(kisi == "batuhan yiğit"):
     print("email : batuhan.yigit@tga.gov.tr")
