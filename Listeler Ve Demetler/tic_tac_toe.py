@@ -4,8 +4,13 @@ tahta = [["___", "___", "___"],
          ["___", "___", "___"],
          ["___", "___", "___"]]
 
-x_durumu = []
-o_durumu = []
+
+
+
+print("\n"*15)
+
+for i in tahta:
+    print("\t".expandtabs(30),*i, end="\n"*2)
 
 kazanma_ölçütleri = [[[0, 0], [1, 0], [2, 0]],
                      [[0, 1], [1, 1], [2, 1]],
@@ -16,19 +21,22 @@ kazanma_ölçütleri = [[[0, 0], [1, 0], [2, 0]],
                      [[0, 0], [1, 1], [2, 2]],
                      [[0, 2], [1, 1], [2, 0]]]
 
-print("\n"*15)
+x_durumu = []
+o_durumu = []
 
-for i in tahta:
-    print("\t".expandtabs(30),*i, end="\n"*2)
 
-sira = 1
+sira = False
 
 while True:
-    if sira % 2 == 0:
+    if sira:
         isaret = "X".center(3)
+        sira = False
+        
     else:
         isaret = "O".center(3)
-    sira += 1
+        sira = True
+        
+    
 
     print()
     print("İşaret : {}\n".format(isaret))
@@ -56,7 +64,21 @@ while True:
 
     else:
         print("\n orası dolu tekrar deneyiniz\n")
+
+    for i in tahta:
+        print("\t".expandtabs(30), *i, end="\n"*2)
     
     for i in kazanma_ölçütleri:
         o = [z for z in i if z in o_durumu]
+        x = [z for z in i if z in x_durumu]
+        # print("o: ",o)
+        # print("x: ",x)
+
+
+        if len(o) == len(i):
+            print("O Kazandı !!!!")
+            quit()
+        if len(x) == len(i):
+            print("X Kazandı !!!!")
+            quit()
         
