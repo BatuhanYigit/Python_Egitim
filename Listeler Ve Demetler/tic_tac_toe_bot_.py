@@ -25,6 +25,8 @@ kazanma_ölçütleri = [[[0, 0], [1, 0], [2, 0]],
 x_durumu = []
 o_durumu = []
 
+x_random = random.randint(0,3)
+y_random = random.randint(0,3)
 
 
 sira = 1
@@ -69,7 +71,7 @@ while True:
         if isaret == "X".center(3):
             x_durumu += [[x,y]]
         elif isaret == "O".center(3):
-            o_durumu += [[x,y]]
+            o_durumu += [[x_random,y_random]]
         sira += 1
 
     else:
