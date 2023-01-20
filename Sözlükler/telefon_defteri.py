@@ -5,5 +5,10 @@ telefon_defteri = {
 }
 
 kisi = input("İsim Giriniz : ")
-cevap = "{} adlı kişinin telefon numarası: {}"
-print(cevap.format(kisi,telefon_defteri[kisi]))
+
+if kisi in telefon_defteri:
+    cevap = "{} adlı kişinin telefon numarası: {}"
+    print(cevap.format(kisi,telefon_defteri[kisi]))
+
+else:
+    print("Aradığınız kişiyi bulamadık")
