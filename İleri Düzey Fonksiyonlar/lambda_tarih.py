@@ -11,7 +11,6 @@ time = lambda x: x.time()
 
 
 
-
 print(year(now))
 print(month(now))
 print(date(now))
