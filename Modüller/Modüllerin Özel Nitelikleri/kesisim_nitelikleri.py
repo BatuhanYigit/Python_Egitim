@@ -1,4 +1,7 @@
-moduller = ['os', 'sys', 'random']
+modüller = ['os', 'sys', 'random']
 
-def kesisim_bul(modulller):
-    kumeler = [set(dir(__import__()))]
+def kesişim_bul(modüller):
+    kümeler = [set(dir(__import__(modül))) for modül in modüller]
+    return set.intersection(*kümeler)
+
+print(kesişim_bul(modüller))
