@@ -4,14 +4,17 @@ class Calisan():
         self.isim = isim
         self.kabiliyetler = []
         self.personele_ekle()
+    @classmethod
+    def personel_sayisini_goruntule(cls):
+        print(len(cls.personel))
 
     def personele_ekle(self):
         self.personel.append(self.isim)
-        print('{} adlı kişi personele ekledni !'.format(self.isim))
-
-    def personeli_goruntule(self):
+        print('{} adlı kişi personele eklendi !'.format(self.isim))
+    @classmethod
+    def personeli_goruntule(cls):
         print('Personel Listesi: ')
-        for kisi in self.personel:
+        for kisi in cls.personel:
             print(kisi)
 
     def kabiliyet_ekle(self,kabiliyet):
