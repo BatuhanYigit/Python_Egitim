@@ -1,6 +1,6 @@
 class Calisan():
     personel = []
-    def __init__(self):
+    def __init__(self, isim):
         self.isim = isim
         self.kabiliyetler = []
         self.personele_ekle()
