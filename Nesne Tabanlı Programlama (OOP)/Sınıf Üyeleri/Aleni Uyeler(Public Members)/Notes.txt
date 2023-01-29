@@ -1,0 +1,3 @@
+Eğer bir sınıf üyesi dışarıya açıksa, yani bu üyeye sınıf dışından normal yöntemlerle erişilebiliyorsa bu tür üyelere ‘aleni üyeler’ adı verilir. Programlama maceranız boyunca karşınıza çıkacak veri üyelerinin tamamına yakını alenidir. Biz de bu kitapta şimdiye kadar yalnızca aleni üyeleri gördük.
+
+Eğer bildiğiniz tek programlama dili Python ise, şu anda tam olarak neden bahsediyor olduğumuza anlam verememiş olabilirsiniz. Dilerseniz durumu zihninizde biraz olsun netleştirebilmek için basit bir örnek verelim.

@@ -1,0 +1,9 @@
+Python’da bir sınıf içinde bulunan nitelikler, değişkenler, metotlar, fonksiyonlar ve buna benzer başka veri tipleri, o sınıfın üyelerini meydana getirir. Bir sınıfın üyelerini genel olarak üçe ayırarak inceleyebiliriz:
+
+Aleni üyeler (public members)
+
+Gizli üyeler (private members)
+
+Yarı-gizli üyeler (semi-private members).
+
+Bu bölümde bu üç üye türünü ve bunların birbirinden farkını ele alacağız. Öncelikle aleni üyelerden başlayalım.
