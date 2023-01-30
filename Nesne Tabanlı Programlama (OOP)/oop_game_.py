@@ -4,6 +4,7 @@ import sys
 
 
 class Oyuncu():
+    
     def __init__(self,isim,can=5,enerji=100):
         self.isim = isim
         self.darbe = 0
