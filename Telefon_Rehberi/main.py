@@ -6,7 +6,15 @@ cur = db.cursor()
 
 cur.execute("""CREATE TABLE IF NOT EXISTS deneme (name, surname, phone, mail)""")
 
+username = input("İsminizi Giriniz : ")
+surname = input("Soyisminizi Giriniz : ")
+phone = input("Telefon Numaranızı Giriniz : ")
+mail = input("Mail adresinizi giriniz : ")
 
-cur.execute("""INSERT INTO deneme VALUES ('batuhan', 'Yiğit', '011111111', 'batuhan@gmail.com')""")
+information = {"username":username, "surname":surname, "phone":phone, "mail":mail}
+
+cur.execute("""INSERT INTO deneme VALUES ('{username}', '{surname}', '{phone}', '{mail}')""".format(**information))
+
+db.commit()
 
 db.close()
