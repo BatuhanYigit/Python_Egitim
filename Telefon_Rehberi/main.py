@@ -1,19 +1,39 @@
 import sqlite3 as sql
+import sqlquery
+
 
 db = sql.connect('/home/batuhan/Documents/GitHub/Python_Egitim/Telefon_Rehberi/database.sqlite')
-
 cur = db.cursor()
 
-cur.execute("""CREATE TABLE IF NOT EXISTS deneme (name, surname, phone, mail)""")
+cur.execute(sqlquery.create_table)
 
-username = input("İsminizi Giriniz : ")
-surname = input("Soyisminizi Giriniz : ")
-phone = input("Telefon Numaranızı Giriniz : ")
-mail = input("Mail adresinizi giriniz : ")
+cur.execute(sqlquery.check_data)
 
-information = {"username":username, "surname":surname, "phone":phone, "mail":mail}
+data = cur.fetchall()
 
-cur.execute("""INSERT INTO deneme VALUES ('{username}', '{surname}', '{phone}', '{mail}')""".format(**information))
+data = int(data[0][0])
+
+print("Database de {} adet veri var".format(data))
+
+cur.execute(sqlquery.list_data)
+
+test = cur.fetchall()
+print("İsim","Soyisim","Telefon","Mail")
+for i in test:
+    print(test[0][:5])
+
+type(test)
+print(test)
+# username = input("İsminizi Giriniz : ")
+# surname = input("Soyisminizi Giriniz : ")
+# phone = input("Telefon Numaranızı Giriniz : ")
+# mail = input("Mail adresinizi giriniz : ")
+
+# information = {"username":username, "surname":surname, "phone":phone, "mail":mail}
+
+# cur.execute(sqlquery.insert_data.format(**information))
+
+
 
 db.commit()
 
