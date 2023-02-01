@@ -2,6 +2,7 @@ import sqlite3 as sql
 import sqlquery
 
 
+
 db = sql.connect('/home/batuhan/Documents/GitHub/Python_Egitim/Telefon_Rehberi/database.sqlite')
 cur = db.cursor()
 
@@ -19,11 +20,11 @@ cur.execute(sqlquery.list_data)
 
 test = cur.fetchall()
 print("İsim","Soyisim","Telefon","Mail")
-for i in test:
-    print(test[0][:5])
 
-type(test)
-print(test)
+print(test,sep='\n',end=",")
+
+# type(test)
+# print(test)
 # username = input("İsminizi Giriniz : ")
 # surname = input("Soyisminizi Giriniz : ")
 # phone = input("Telefon Numaranızı Giriniz : ")
