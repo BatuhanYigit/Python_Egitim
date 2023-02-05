@@ -22,12 +22,16 @@ def add_number_test(name,surname,phone,mail):
                  Telefon : {}
                  Mail : {}
               """.format(name,surname,phone,mail))
-        phonebook.conn.close()
+        
 
 def phonebook_list():
         query = pd.read_sql_query(sqlquery.list_data,phonebook.conn)
-        df = pd.DataFrame(query, columns=['name','surname','phone','mail'])
-        print(df)
+        df = pd.DataFrame(query, columns=['ID','name','surname','phone','mail'])
+        if df.empty:
+                print("Rehberinizde kimse bulunmuyor")
+        
+        else:
+                print(df)
 
 def delete_number():
         phonebook_list()
@@ -35,7 +39,7 @@ def delete_number():
         delete_info = {"delete_id":id}
         phonebook.cur.execute(sqlquery.delete_number.format(**delete_info))
         phonebook.conn.commit()
-        phonebook.conn.close()
         print("Numara Silindi")
         phonebook_list()
+        
 
