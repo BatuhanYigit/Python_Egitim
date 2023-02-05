@@ -1,11 +1,7 @@
 import sqlite3 as sql
 import sqlquery
 import pandas as pd
-import os
 import func
-# conn = sql.connect()
-
-
 
 with sql.connect('/home/batuhan/Documents/GitHub/Python_Egitim/Telefon_Rehberi/database.sqlite') as conn:
             cur = conn.cursor()
