@@ -39,11 +39,14 @@ def delete_number():
 
         id = input("Silmek İstediğiniz Numaranın ID sini giriniz : ")
         delete_info = {"delete_id":id}
+        question = input("Numarayı Silmek İstediğine Emin Misin? (E/H) : ")
+        if question == "e" or question == "E":
 
-        phonebook.cur.execute(sqlquery.delete_number.format(**delete_info))
-        phonebook.conn.commit()
-        
-        print("Numara Silindi")
-        phonebook_list()
-        
+                phonebook.cur.execute(sqlquery.delete_number.format(**delete_info))
+                phonebook.conn.commit()
+                
+                print("Numara Silindi")
+                phonebook_list()
+        else:
+                print("Numara silinmedi")
 

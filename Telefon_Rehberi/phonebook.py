@@ -9,13 +9,13 @@ with sql.connect('/home/batuhan/Documents/GitHub/Python_Egitim/Telefon_Rehberi/d
             if __name__ == "__main__":
                 while True:
                     print("""
-                            *****************************************************************
-                            Telefon Rehberine Hoş Geldiniz Yapmak İstediğiniz İşlemi Seçiniz!
-                            1- Numara Ekleme
-                            2- Numara Silme
-                            3- Rehberi Görüntüle
-                            q - Çıkış
-                            *****************************************************************
+                           *********************************************************************
+                           * Telefon Rehberine Hoş Geldiniz Yapmak İstediğiniz İşlemi Seçiniz! *
+                           * 1- Numara Ekleme                                                  *
+                           * 2- Numara Silme                                                   *
+                           * 3- Rehberi Görüntüle                                              *
+                           * q - Çıkış                                                         * 
+                           *********************************************************************
                             """)
                     choice = input("İşlem : ")
 
