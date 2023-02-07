@@ -1,6 +1,6 @@
 import sqlite3 as sql
-import sqlquery
 import pandas as pd
+import sqlquery
 import func
 
 with sql.connect('/home/batuhan/Documents/GitHub/Python_Egitim/Telefon_Rehberi/database.sqlite') as conn:
