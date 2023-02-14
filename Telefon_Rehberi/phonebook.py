@@ -3,6 +3,7 @@ import pandas as pd
 import sqlquery
 import func
 
+
 with sql.connect('/home/batuhan/Documents/GitHub/Python_Egitim/Telefon_Rehberi/database.sqlite') as conn:
             cur = conn.cursor()
             cur.execute(sqlquery.create_table)
@@ -42,6 +43,7 @@ with sql.connect('/home/batuhan/Documents/GitHub/Python_Egitim/Telefon_Rehberi/d
                         exit()
                     else:
                         print("Yanlış İşlem")
+
 
 
 
